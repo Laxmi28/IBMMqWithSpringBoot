@@ -1,0 +1,13 @@
+ibm:
+  mq:
+    queue-manager: QM1
+    channel: DEV.APP.SVRCONN
+    connName: localhost(1414)
+    user: app
+    password: passw0rd
+
+spring:
+  jms:
+    listener:
+      min-concurrency: 1
+      max-concurrency: 3

@@ -1,0 +1,16 @@
+version : "3.9"
+
+services :
+  ibmmq:
+   image : icr.io/ibm-messaging/mq:latest
+   container_name : ibmmq
+   environment:
+      LICENSE: accept
+      MQ_QMGR_NAME: QM1
+      MQ_ADMIN_PASSWORD: passw0rd
+      MQ_APP_PASSWORD: passw0rd
+   ports:
+      - "1414:1414"   # MQ traffic
+      - "9443:9443"   # MQ Web Console
+   volumes:
+      - ./mq/20-config.mqsc:/etc/mqm/20-config.mqsc:ro
